@@ -1,6 +1,7 @@
 
 <h1>Theme Overview: OWbN Eternal</h1>
 
+<h3>Update 1.1; 20 May 2024</h3>
 
 Design Aesthetic: OWBN Eternal will embody the dark, enigmatic atmosphere of the World of Darkness, incorporating its iconic symbology across two visual modes: Night and Day. The Night mode will feature a dark palette with deep blues, blacks, and crimson highlights, while the Day mode will offer a lighter palette with grays, whites, and muted tones for readability. Both modes will seamlessly integrate Classic World of Darkness symbols, such as Vampire clans, Werewolf tribes, and Wraith legions, into the design.
 
@@ -100,6 +101,7 @@ OWBN Eternal will offer a responsive, mobile-first design with two visual modes:
 * Night Mode: Dark theme with a color palette optimized for low-light conditions.
 * Day Mode: Light theme with a color palette optimized for high visibility in bright conditions.
 * User-controlled toggle between modes, with optional automatic switching based on local time.
+* [1.1] Night and Day Modes will be managed by the WP Dark Mode Premier plugin. This will place all color sets within the scope of this plugin allowing changes to be managed for each mode easily. This is fully compatible with Elementor and the WP Astra theme. https://wppool.dev/docs-category/wp-dark-mode-docs/
 
 <h5>3.1.3 Classic World of Darkness Symbology</h5>
 
