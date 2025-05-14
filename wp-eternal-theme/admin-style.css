@@ -1,0 +1,6 @@
+body.wp-admin #your-profile tr.user-capabilities-wrap {
+    display: none;
+}
+body.wp-admin #your-profile table.form-table + h2 {
+    display: none;
+}
