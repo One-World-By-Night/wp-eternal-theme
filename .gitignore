@@ -1,3 +1,11 @@
+# OS files
+.DS_Store
+
+# Local development and legacy references
+dev/
+wp-eternal-legacy/
+wp-eternal-now/
+
 # Wordpress - ignore core, configuration, examples, uploads and logs.
 # https://github.com/github/gitignore/blob/main/WordPress.gitignore
 
