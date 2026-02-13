@@ -4,13 +4,72 @@ Theme URI: https://github.com/One-World-By-Night/wp-eternal-theme
 Description: A standalone WordPress theme built for Elementor with WP Dark Mode support. Designed for the One World by Night community.
 Author: One World By Night
 Author URI: https://owbn.net
-Version: 2.0.0
+Version: 2.1.0
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 Text Domain: wp-eternal-theme
 */
+
+/**********OWBN Brand Colors - From newsletter-colors.png**********/
+:root {
+	/* Primary Brand Colors (Newsletter) */
+	--owbn-logo-red: #D2242C;        /* Logo and newsletter title */
+	--owbn-newsletter-bg: #333333;    /* Newsletter background */
+	--owbn-feature-box: #412234;      /* Newsletter feature box (dark burgundy) */
+	--owbn-link-orange: #EA5B3A;      /* Newsletter links (coral/orange) */
+	--owbn-black: #000000;
+	--owbn-white: #FFFFFF;
+
+	/* Extended Palette (Complementary) */
+	--owbn-crimson: #D2242C;          /* Alias for logo-red (primary brand) */
+	--owbn-dark-gray: #1a1a1a;        /* Darker than newsletter bg */
+	--owbn-medium-gray: #2d2d2d;      /* Between dark and newsletter bg */
+	--owbn-light-gray: #f5f5f5;       /* Light backgrounds */
+
+	/* Accent Colors */
+	--owbn-accent-burgundy: #412234;  /* Feature boxes, cards */
+	--owbn-accent-coral: #EA5B3A;     /* Links, CTAs, hover states */
+	--owbn-accent-dark-red: #8b0000;  /* Dark red for depth */
+
+	/* Semantic Colors */
+	--owbn-text-primary: #333333;     /* Newsletter gray works for text */
+	--owbn-text-secondary: #666666;
+	--owbn-text-light: #FFFFFF;
+	--owbn-border: #dddddd;
+	--owbn-border-dark: #412234;      /* Use burgundy for dark borders */
+	--owbn-background: #FFFFFF;
+	--owbn-background-dark: #333333;  /* Newsletter background */
+	--owbn-background-darker: #1a1a1a;
+
+	/* Interactive States */
+	--owbn-link: #EA5B3A;             /* Coral for links */
+	--owbn-link-hover: #D2242C;       /* Red on hover */
+	--owbn-button-primary: #D2242C;   /* Logo red for buttons */
+	--owbn-button-hover: #EA5B3A;     /* Coral on hover */
+
+	/* Status Colors */
+	--owbn-success: #28a745;
+	--owbn-warning: #ffc107;
+	--owbn-error: #dc3545;
+	--owbn-info: #17a2b8;
+
+	/* Dark Mode Overrides (WP Dark Mode) */
+	--owbn-dark-text-primary: #e0e0e0;
+	--owbn-dark-text-secondary: #b0b0b0;
+	--owbn-dark-border: #412234;      /* Burgundy borders in dark mode */
+	--owbn-dark-background: #1a1a1a;
+}
+
+/* Dark Mode Active States */
+html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]),
+html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) {
+	--owbn-text-primary: var(--owbn-dark-text-primary);
+	--owbn-text-secondary: var(--owbn-dark-text-secondary);
+	--owbn-border: var(--owbn-dark-border);
+	--owbn-background: var(--owbn-dark-background);
+}
 
 /**********Common style start*********/
 
@@ -298,10 +357,6 @@ html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .not__in
      padding: 10px !important;
     background: var(--wp-eternal-header-bg);
     backdrop-filter: blur(14px) !important
-}
-body:not(.home) header.elementor-location-header {
-    margin-top: 0px;
-    padding-top: 130px;
 }
 
 .page-header h1.entry-title {
@@ -816,10 +871,26 @@ color: var(--wp-eternal-table-row-text) !important;
 }
 
 .elementor-location-header {
-    padding-top: 150px;
+    padding-top: 80px;
 }
 .innerPages_Banner.elementor-section {
-    margin-top: -200px !important;
+    margin-top: -80px !important;
+}
+
+/* Push content below fixed header using margin (not padding to avoid white space) */
+#content {
+    margin-top: 120px;
+}
+
+/* Adjust for admin bar */
+.admin-bar #content {
+    margin-top: 152px; /* 120px + 32px */
+}
+
+@media screen and (max-width: 782px) {
+    .admin-bar #content {
+        margin-top: 166px; /* 120px + 46px */
+    }
 }
 
 /******************Light dark mode css start*****************************/
@@ -1110,7 +1181,8 @@ span.page-numbers.prev, .page-numbers.next {
     padding-inline-start: 10px !important;
 }
 	:not(.home) header.elementor-location-header  {
-    margin-top: -130px;
+    margin-top: 0px;
+    padding-top: 70px;
 }
 .event--slider .elementor-testimonial__footer {
 	flex-direction: column !important;
@@ -1162,7 +1234,7 @@ span.page-numbers.prev, .page-numbers.next {
     padding: unset !important;
 }
 .elementor-location-header {
-    padding-top: 100px;
+    padding-top: 70px;
 }
 	.owbnVP .proposal-type {
     flex-direction: column;
