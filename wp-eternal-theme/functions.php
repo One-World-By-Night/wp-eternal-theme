@@ -3,14 +3,14 @@
  * WP Eternal Theme - Functions and definitions.
  *
  * @package WPEternalTheme
- * @version 2.1.2
+ * @version 2.1.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WP_ETERNAL_VERSION', '2.1.2' );
+define( 'WP_ETERNAL_VERSION', '2.1.3' );
 define( 'WP_ETERNAL_DIR', get_template_directory() );
 define( 'WP_ETERNAL_URI', get_template_directory_uri() );
 

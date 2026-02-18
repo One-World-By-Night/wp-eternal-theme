@@ -4,7 +4,7 @@ Theme URI: https://github.com/One-World-By-Night/wp-eternal-theme
 Description: A standalone WordPress theme built for Elementor with WP Dark Mode support. Designed for the One World by Night community.
 Author: One World By Night
 Author URI: https://owbn.net
-Version: 2.1.2
+Version: 2.1.3
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -979,20 +979,16 @@ html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .faq--color .u
 html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .faq--color .uael-accordion-title .uael-accordion-icon .uael-accordion-icon-closed svg {
     fill: var(--e-global-color-bcd8248) !important;
 }
-/* Dark mode: readable table text on darkened backgrounds. */
-html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body table td,
-html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body table th,
-html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body table td a,
-html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .dataTables_info,
-html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .dataTables_length label,
-html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .dataTables_filter label,
-html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body table td,
-html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body table th,
-html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body table td a,
-html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .dataTables_info,
-html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .dataTables_length label,
-html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .dataTables_filter label {
-    color: var(--wp-eternal-table-text) !important;
+/* Dark mode: universal content readability.
+   Forces ALL content to inherit the body's light text color so that
+   plugins/widgets with hardcoded dark colors (e.g. color:#333) become
+   readable on the dark background.  Exclusions keep buttons, the dark-mode
+   toggle, and .wp-dark-mode-ignore elements untouched.  Theme-specific
+   overrides (header nav, button text, etc.) have higher specificity and
+   still win. */
+html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body *:not(.wp-dark-mode-ignore *):not(.wp-dark-mode-switch *):not(.elementor-button *),
+html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body *:not(.wp-dark-mode-ignore *):not(.wp-dark-mode-switch *):not(.elementor-button *) {
+    color: inherit !important;
 }
 /* Dark mode: header is always dark — force nav links & arrows white.
    Specificity must beat the generic dark-mode link reset on line ~913. */
