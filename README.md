@@ -2,6 +2,18 @@
 
 A standalone WordPress theme built for the [One World by Night](https://owbn.net) community. Designed around Elementor and WP Dark Mode, the theme reflects the dark, atmospheric aesthetic of the Classic World of Darkness with full day/night visual modes.
 
+## Version 2.1.1
+
+Released February 2026. Patch release fixing dark mode navigation colors.
+
+### Fix
+
+- **Dark mode header nav** — menu links and dropdown arrows in the fixed header now stay white in dark mode; previously the WP Dark Mode plugin preset colors and generic dark-mode link resets were overriding the header nav due to CSS specificity
+
+## Version 2.1.0
+
+Released February 2026. Header spacing fix and improvements.
+
 ## Version 2.0.0
 
 Released February 2026. Complete rebuild from the former Hello Elementor child theme into a self-contained, modular WordPress theme.
@@ -33,7 +45,7 @@ Released February 2026. Complete rebuild from the former Hello Elementor child t
 
 ## Installation
 
-1. Download `wp-eternal-theme.zip` from this repository.
+1. Download the latest `wp-eternal-theme-x.x.x.zip` from this repository.
 2. In WordPress, go to **Appearance > Themes > Add New > Upload Theme**.
 3. Upload the zip and activate.
 4. Follow the TGM prompt to install required plugins (Elementor, Elementor Pro, WP Dark Mode).

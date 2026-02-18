@@ -4,7 +4,7 @@ Theme URI: https://github.com/One-World-By-Night/wp-eternal-theme
 Description: A standalone WordPress theme built for Elementor with WP Dark Mode support. Designed for the One World by Night community.
 Author: One World By Night
 Author URI: https://owbn.net
-Version: 2.1.0
+Version: 2.1.1
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -978,6 +978,22 @@ html[data-wp-dark-mode-active] .view--btn * {
 html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .faq--color .uael-accordion-title .uael-accordion-icon .uael-accordion-icon-closed svg,
 html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .faq--color .uael-accordion-title .uael-accordion-icon .uael-accordion-icon-closed svg {
     fill: var(--e-global-color-bcd8248) !important;
+}
+/* Dark mode: header is always dark — force nav links & arrows white.
+   Specificity must beat the generic dark-mode link reset on line ~913. */
+html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .main--header a.elementor-item:not(.wp-dark-mode-ignore):not(.wp-dark-mode-ignore *):not(.button):not(.btn):not(.wp-element-button):not(.wp-block-button__link),
+html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .main--header a.elementor-item:not(.wp-dark-mode-ignore):not(.wp-dark-mode-ignore *):not(.button):not(.btn):not(.wp-element-button):not(.wp-block-button__link) {
+    color: #fff !important;
+}
+html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .main--header a.elementor-item:not(.wp-dark-mode-ignore):not(.button):not(.btn):not(.wp-element-button):hover,
+html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .main--header a.elementor-item:not(.wp-dark-mode-ignore):not(.button):not(.btn):not(.wp-element-button):focus,
+html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .main--header a.elementor-item:not(.wp-dark-mode-ignore):not(.button):not(.btn):not(.wp-element-button):hover,
+html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .main--header a.elementor-item:not(.wp-dark-mode-ignore):not(.button):not(.btn):not(.wp-element-button):focus {
+    color: #fff !important;
+}
+html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .main--header .sub-arrow svg,
+html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .main--header .sub-arrow svg {
+    fill: #fff !important;
 }
 /******************Light dark mode css end*****************************/
 
