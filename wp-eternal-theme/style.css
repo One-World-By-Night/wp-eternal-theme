@@ -4,7 +4,7 @@ Theme URI: https://github.com/One-World-By-Night/wp-eternal-theme
 Description: A standalone WordPress theme built for Elementor with WP Dark Mode support. Designed for the One World by Night community.
 Author: One World By Night
 Author URI: https://owbn.net
-Version: 2.1.1
+Version: 2.1.2
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -576,7 +576,7 @@ header.elementor-location-header {
 	--wp-eternal-bullet: var(--e-global-color-e21451c);
 	--wp-eternal-border-subtle: rgba(255, 255, 255, 0.15);
 	--wp-eternal-table-text: #fff;
-	--wp-eternal-table-row-text: #000;
+	--wp-eternal-table-row-text: #fff;
 }
 
 /* Light mode overrides (when WP Dark Mode toggles to light) */
@@ -978,6 +978,21 @@ html[data-wp-dark-mode-active] .view--btn * {
 html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .faq--color .uael-accordion-title .uael-accordion-icon .uael-accordion-icon-closed svg,
 html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .faq--color .uael-accordion-title .uael-accordion-icon .uael-accordion-icon-closed svg {
     fill: var(--e-global-color-bcd8248) !important;
+}
+/* Dark mode: readable table text on darkened backgrounds. */
+html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body table td,
+html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body table th,
+html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body table td a,
+html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .dataTables_info,
+html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .dataTables_length label,
+html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .dataTables_filter label,
+html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body table td,
+html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body table th,
+html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body table td a,
+html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .dataTables_info,
+html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .dataTables_length label,
+html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .dataTables_filter label {
+    color: var(--wp-eternal-table-text) !important;
 }
 /* Dark mode: header is always dark — force nav links & arrows white.
    Specificity must beat the generic dark-mode link reset on line ~913. */

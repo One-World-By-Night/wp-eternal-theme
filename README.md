@@ -2,12 +2,13 @@
 
 A standalone WordPress theme built for the [One World by Night](https://owbn.net) community. Designed around Elementor and WP Dark Mode, the theme reflects the dark, atmospheric aesthetic of the Classic World of Darkness with full day/night visual modes.
 
-## Version 2.1.1
+## Version 2.1.2
 
-Released February 2026. Patch release fixing dark mode navigation colors.
+Released February 2026. Patch release fixing dark mode readability issues.
 
-### Fix
+### Fixes
 
+- **Dark mode table text** — table content (cells, headers, links, DataTables controls) now uses light text in dark mode; the `--wp-eternal-table-row-text` variable was hardcoded to `#000` in both modes, causing unreadable dark-on-dark text
 - **Dark mode header nav** — menu links and dropdown arrows in the fixed header now stay white in dark mode; previously the WP Dark Mode plugin preset colors and generic dark-mode link resets were overriding the header nav due to CSS specificity
 
 ## Version 2.1.0
