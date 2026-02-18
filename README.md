@@ -2,15 +2,16 @@
 
 A standalone WordPress theme built for the [One World by Night](https://owbn.net) community. Designed around Elementor and WP Dark Mode, the theme reflects the dark, atmospheric aesthetic of the Classic World of Darkness with full day/night visual modes.
 
-## Version 2.1.3
+## Version 2.1.4
 
-Released February 2026. Patch release fixing dark mode readability across the board.
+Released February 2026. Fixes dark mode across the board.
 
 ### Fixes
 
-- **Universal dark mode text** — all content now inherits the body's light text color in dark mode, overriding hardcoded dark colors from plugins and widgets (e.g. chronicle grids, tables, page titles). Uses `color: inherit !important` on `body *` with exclusions for buttons, the dark-mode toggle, and `.wp-dark-mode-ignore` elements
-- **Dark mode table variable** — `--wp-eternal-table-row-text` changed from `#000` to `#fff` in dark mode
+- **Missing Elementor color variables (root cause)** — the theme's dark mode CSS relied on three custom Elementor global colors (`--e-global-color-bcd8248`, `--e-global-color-42f8237`, `--e-global-color-e21451c`) that were never defined in the site's Elementor settings. Every `var()` reference resolved to nothing, making all dark mode text, button, and accent rules silently fail. Added `:root` fallback definitions using OWBN brand colors
+- **Universal dark mode text** — all content inherits the body's light text color in dark mode via `color: inherit !important` on `body *`, overriding hardcoded dark colors from plugins and widgets
 - **Dark mode header nav** — menu links and dropdown arrows in the fixed header stay white in dark mode
+- **Dark mode table variable** — `--wp-eternal-table-row-text` changed from `#000` to `#fff` in dark mode
 
 ## Version 2.1.0
 

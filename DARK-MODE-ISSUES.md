@@ -2,6 +2,43 @@
 
 Summary of dark mode issues found on [chronicles.owbn.net](https://chronicles.owbn.net/) and fixes applied.
 
+## Issue 0: Undefined Elementor custom global colors (ROOT CAUSE)
+
+**Status:** Fixed in 2.1.4
+
+**Symptom:** ALL dark mode CSS rules silently failed — text stayed black on dark backgrounds, buttons had no accent color, hover states did nothing.
+
+**Root cause:** The theme's dark mode CSS references three custom Elementor global color variables throughout:
+
+| Variable | Used for |
+| --- | --- |
+| `--e-global-color-bcd8248` | Body text in dark mode, icon fills, table text |
+| `--e-global-color-42f8237` | Button text, sub-arrow fills, accent highlights |
+| `--e-global-color-e21451c` | Red accent — buttons, borders, hover states, `--red` alias |
+
+These were **never defined** in the site's Elementor Global Colors panel. The Elementor kit CSS (`post-7.css`) only defines the four default colors (`primary`, `secondary`, `text`, `accent`). Every `var()` call referencing these custom colors resolved to **nothing**, making the entire declaration invalid.
+
+For example:
+```css
+html.wp-dark-mode-active body { color: var(--e-global-color-bcd8248) !important; }
+```
+With `--e-global-color-bcd8248` undefined, this becomes `color: !important` → **invalid** → **ignored**. The body gets no light text color. Everything else that tries to inherit from it also fails.
+
+**Fix:** Added `:root` fallback definitions in the theme CSS using OWBN brand colors:
+```css
+:root {
+    --e-global-color-bcd8248: #FFFFFF;   /* Light text */
+    --e-global-color-42f8237: #FFFFFF;   /* White / highlight */
+    --e-global-color-e21451c: #D2242C;   /* Red accent */
+}
+```
+
+If the site's Elementor Global Colors panel later defines these, the Elementor values (scoped to `.elementor-kit-*`) will take precedence.
+
+**Long-term fix:** Define these three custom global colors in **Elementor > Site Settings > Global Colors** so they're part of the site's Elementor config, not just theme CSS fallbacks.
+
+---
+
 ## Issue 1: Header nav links wrong color in dark mode
 
 **Status:** Fixed in 2.1.1

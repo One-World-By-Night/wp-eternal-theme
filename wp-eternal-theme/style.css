@@ -4,7 +4,7 @@ Theme URI: https://github.com/One-World-By-Night/wp-eternal-theme
 Description: A standalone WordPress theme built for Elementor with WP Dark Mode support. Designed for the One World by Night community.
 Author: One World By Night
 Author URI: https://owbn.net
-Version: 2.1.3
+Version: 2.1.4
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -21,6 +21,14 @@ Text Domain: wp-eternal-theme
 	--owbn-link-orange: #EA5B3A;      /* Newsletter links (coral/orange) */
 	--owbn-black: #000000;
 	--owbn-white: #FFFFFF;
+
+	/* Elementor custom global color fallbacks.
+	   These are referenced throughout the dark mode CSS.
+	   If the site's Elementor Global Colors panel defines them,
+	   the Elementor values (.elementor-kit-*) take precedence. */
+	--e-global-color-bcd8248: #FFFFFF;   /* Light text (body text in dark mode) */
+	--e-global-color-42f8237: #FFFFFF;   /* White / highlight text */
+	--e-global-color-e21451c: #D2242C;   /* Red accent (buttons, hover) */
 
 	/* Extended Palette (Complementary) */
 	--owbn-crimson: #D2242C;          /* Alias for logo-red (primary brand) */
