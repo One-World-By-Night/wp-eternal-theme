@@ -4,7 +4,7 @@ Theme URI: https://github.com/One-World-By-Night/wp-eternal-theme
 Description: A standalone WordPress theme built for Elementor with WP Dark Mode support. Designed for the One World by Night community.
 Author: One World By Night
 Author URI: https://owbn.net
-Version: 2.1.4
+Version: 2.2.1
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -885,19 +885,37 @@ color: var(--wp-eternal-table-row-text) !important;
     margin-top: -80px !important;
 }
 
-/* Push content below fixed header using margin (not padding to avoid white space) */
+/* Push content below fixed header using margin (not padding to avoid white space).
+   Base = 150px so total offset (30px spacer + 150px margin = 180px) clears
+   the ~150px-tall header with breathing room. */
 #content {
-    margin-top: 120px;
+    margin-top: 150px;
 }
 
 /* Adjust for admin bar */
 .admin-bar #content {
-    margin-top: 152px; /* 120px + 32px */
+    margin-top: 182px; /* 150px + 32px */
 }
 
 @media screen and (max-width: 782px) {
     .admin-bar #content {
-        margin-top: 166px; /* 120px + 46px */
+        margin-top: 196px; /* 150px + 46px */
+    }
+}
+
+/* Elementor full-width template pages have no <main id="content"> wrapper.
+   Content sits in a sibling div right after the header, so apply the same offset. */
+header.elementor-location-header + [data-elementor-type="wp-page"] {
+    margin-top: 150px;
+}
+
+.admin-bar header.elementor-location-header + [data-elementor-type="wp-page"] {
+    margin-top: 182px; /* 150px + 32px */
+}
+
+@media screen and (max-width: 782px) {
+    .admin-bar header.elementor-location-header + [data-elementor-type="wp-page"] {
+        margin-top: 196px; /* 150px + 46px */
     }
 }
 
