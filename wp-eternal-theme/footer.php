@@ -1,10 +1,4 @@
 <?php
-/**
- * The footer template.
- *
- * @package WPEternalTheme
- */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

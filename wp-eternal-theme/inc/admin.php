@@ -1,12 +1,4 @@
 <?php
-/**
- * Admin menu customizations.
- *
- * Hides admin menu items from non-admin users.
- *
- * @package WPEternalTheme
- */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

@@ -1,9 +1,3 @@
-/**
- * WP Eternal Theme - Admin styles.
- *
- * @package WPEternalTheme
- */
-
 body.wp-admin #your-profile tr.user-capabilities-wrap {
 	display: none;
 }

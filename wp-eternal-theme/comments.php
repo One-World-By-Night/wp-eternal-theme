@@ -1,10 +1,4 @@
 <?php
-/**
- * The template for displaying comments.
- *
- * @package WPEternalTheme
- */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

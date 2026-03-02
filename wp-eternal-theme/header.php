@@ -1,10 +1,4 @@
 <?php
-/**
- * The header template.
- *
- * @package WPEternalTheme
- */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

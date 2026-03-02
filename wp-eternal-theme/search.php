@@ -1,10 +1,4 @@
 <?php
-/**
- * Search results template.
- *
- * @package WPEternalTheme
- */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

@@ -1,13 +1,4 @@
 <?php
-/**
- * Elementor Theme Builder integration.
- *
- * Registers all core theme locations so Elementor Pro's Theme Builder
- * can override header, footer, single, and archive templates.
- *
- * @package WPEternalTheme
- */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

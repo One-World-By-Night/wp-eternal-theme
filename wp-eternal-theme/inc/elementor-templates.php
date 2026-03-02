@@ -1,24 +1,12 @@
 <?php
-/**
- * Elementor Theme Builder default templates.
- *
- * Creates starter header and footer templates on theme activation
- * so the site has a working Elementor-designed layout out of the box.
- * Templates are only created if none exist; re-activating the theme
- * will not duplicate them.
- *
- * @package WPEternalTheme
- */
-
+// Creates starter header/footer templates on activation so the site has
+// a working Elementor layout out of the box. Only creates if none exist.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 add_action( 'after_switch_theme', 'wp_eternal_maybe_create_elementor_templates' );
 
-/**
- * Create default Elementor Theme Builder templates if none exist.
- */
 function wp_eternal_maybe_create_elementor_templates() {
 	if ( ! did_action( 'elementor/loaded' ) ) {
 		return;
@@ -29,8 +17,6 @@ function wp_eternal_maybe_create_elementor_templates() {
 }
 
 /**
- * Create a single Theme Builder template if one doesn't already exist.
- *
  * @param string $type 'header' or 'footer'.
  */
 function wp_eternal_create_template( $type ) {
@@ -86,28 +72,16 @@ function wp_eternal_create_template( $type ) {
 	update_option( 'elementor_pro_theme_builder_conditions', $conditions );
 }
 
-// ---------- helpers ----------
-
-/**
- * Generate a short random ID for Elementor elements.
- *
- * @return string 7-char hex string.
- */
 function wp_eternal_eid() {
 	return substr( md5( wp_rand() . microtime() ), 0, 7 );
 }
 
-// ---------- header template data ----------
-
 /**
- * Build the Elementor JSON data array for the default header.
+ * Elementor JSON data for default header.
  *
- * Structure:
- *   Section  .main--header  (full-width, fixed)
- *     └─ Column 1  .site--logo--section  →  Site Logo
- *     └─ Column 2  .heade--navbar--sec   →  Nav Menu (menu-1)
- *
- * Dark-mode toggle is handled by WP Dark Mode's floating switch.
+ * Section .main--header (full-width, fixed)
+ *   Column 1 .site--logo--section → Site Logo
+ *   Column 2 .heade--navbar--sec  → Nav Menu (menu-1)
  *
  * @return array Elementor element tree.
  */
@@ -132,7 +106,6 @@ function wp_eternal_header_data() {
 				),
 			),
 			'elements' => array(
-				// Column 1: Logo.
 				array(
 					'id'       => wp_eternal_eid(),
 					'elType'   => 'column',
@@ -166,7 +139,6 @@ function wp_eternal_header_data() {
 						),
 					),
 				),
-				// Column 2: Navigation.
 				array(
 					'id'       => wp_eternal_eid(),
 					'elType'   => 'column',
@@ -201,13 +173,7 @@ function wp_eternal_header_data() {
 	);
 }
 
-// ---------- footer template data ----------
-
-/**
- * Build the Elementor JSON data array for the default footer.
- *
- * @return array Elementor element tree.
- */
+/** @return array Elementor element tree. */
 function wp_eternal_footer_data() {
 	return array(
 		array(

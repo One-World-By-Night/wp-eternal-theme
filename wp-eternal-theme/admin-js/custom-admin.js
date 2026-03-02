@@ -1,12 +1,4 @@
-/**
- * WP Eternal Theme - TablePress admin filtering.
- *
- * Hides TablePress tables not owned by the current author.
- * Only runs when the user has the 'author' role.
- *
- * @package WPEternalTheme
- */
-
+// Hides TablePress tables not owned by the current author (author role only).
 jQuery(document).ready(function ($) {
 	if (typeof customAdminData === 'undefined' || !customAdminData.user_role) {
 		return;

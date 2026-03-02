@@ -1,14 +1,6 @@
 <?php
-/**
- * Optional BetterDocs integration.
- *
- * Provides author-scoped doc categories, tags, and post filtering
- * in the WordPress admin. All hooks are gated behind a post_type_exists
- * check so the theme works cleanly without BetterDocs installed.
- *
- * @package WPEternalTheme
- */
-
+// Author-scoped BetterDocs integration. Gated behind post_type_exists('docs')
+// so the theme works without BetterDocs installed.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -20,30 +12,22 @@ function wp_eternal_init_betterdocs() {
 		return;
 	}
 
-	// Term fields for doc_category.
 	add_action( 'doc_category_add_form_fields', 'wp_eternal_doc_category_add_fields' );
 	add_action( 'created_doc_category', 'wp_eternal_doc_category_save_fields' );
 
-	// Term fields for doc_tag.
 	add_action( 'doc_tag_add_form_fields', 'wp_eternal_doc_tag_add_fields' );
 	add_action( 'created_doc_tag', 'wp_eternal_doc_tag_save_fields' );
 
-	// Filter terms for authors.
 	add_action( 'pre_get_terms', 'wp_eternal_filter_doc_terms' );
 
-	// Meta box for docs.
 	add_action( 'add_meta_boxes', 'wp_eternal_docs_meta_box' );
 	add_action( 'save_post_docs', 'wp_eternal_docs_meta_save' );
 
-	// Filter docs list for authors.
 	add_action( 'pre_get_posts', 'wp_eternal_filter_docs_list' );
 	add_filter( 'views_edit-docs', 'wp_eternal_docs_views_counts' );
 
-	// BetterDocs admin redirect.
 	add_action( 'admin_init', 'wp_eternal_betterdocs_redirect' );
 }
-
-// --- Doc Category Term Fields ---
 
 function wp_eternal_doc_category_add_fields( $taxonomy ) {
 	$current_user_id = get_current_user_id();
@@ -72,8 +56,6 @@ function wp_eternal_doc_category_save_fields( $term_id ) {
 	}
 }
 
-// --- Doc Tag Term Fields ---
-
 function wp_eternal_doc_tag_add_fields( $taxonomy ) {
 	$current_user_id = get_current_user_id();
 	echo '<div class="form-field">';
@@ -100,8 +82,6 @@ function wp_eternal_doc_tag_save_fields( $term_id ) {
 		);
 	}
 }
-
-// --- Filter Terms for Authors ---
 
 function wp_eternal_filter_doc_terms( $query ) {
 	if ( ! is_admin() ) {
@@ -135,8 +115,6 @@ function wp_eternal_filter_doc_terms( $query ) {
 		);
 	}
 }
-
-// --- Meta Box for User ID on Docs ---
 
 function wp_eternal_docs_meta_box() {
 	add_meta_box(
@@ -195,8 +173,6 @@ function wp_eternal_docs_meta_save( $post_id ) {
 	}
 }
 
-// --- Filter Docs List for Authors ---
-
 function wp_eternal_filter_docs_list( $query ) {
 	if ( ! is_admin() || ! $query->is_main_query() ) {
 		return;
@@ -223,8 +199,6 @@ function wp_eternal_filter_docs_list( $query ) {
 		),
 	) );
 }
-
-// --- Docs Views Counts ---
 
 function wp_eternal_docs_views_counts( $views ) {
 	$current_user = wp_get_current_user();
@@ -317,8 +291,7 @@ function wp_eternal_docs_views_counts( $views ) {
 	return $views;
 }
 
-// --- BetterDocs Admin Redirect ---
-
+// Redirect BetterDocs SPA admin page to classic WP list view.
 function wp_eternal_betterdocs_redirect() {
 	if ( ! is_admin() ) {
 		return;

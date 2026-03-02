@@ -1,12 +1,5 @@
 <?php
-/**
- * Fallback header template part.
- *
- * Displays when no Elementor Theme Builder header is assigned.
- *
- * @package WPEternalTheme
- */
-
+// Fallback when no Elementor Theme Builder header is assigned.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

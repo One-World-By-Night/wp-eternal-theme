@@ -1,14 +1,5 @@
 <?php
-/**
- * Optional TablePress integration.
- *
- * Restricts table editing/deletion to table authors and admins.
- * Provides client-side filtering of tables in the admin list.
- * All hooks are gated behind class_exists('TablePress').
- *
- * @package WPEternalTheme
- */
-
+// Author-scoped TablePress access control. Gated behind class_exists('TablePress').
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

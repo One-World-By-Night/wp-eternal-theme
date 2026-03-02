@@ -1,9 +1,3 @@
-/**
- * WP Eternal Theme - Frontend JavaScript.
- *
- * @package WPEternalTheme
- */
-
 (function ($) {
 	'use strict';
 

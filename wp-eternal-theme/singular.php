@@ -1,12 +1,5 @@
 <?php
-/**
- * Single post/page fallback template.
- *
- * Elementor Theme Builder overrides this via the 'single' location.
- *
- * @package WPEternalTheme
- */
-
+// Elementor Theme Builder overrides this via the 'single' location.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

@@ -1,10 +1,4 @@
 <?php
-/**
- * 404 Not Found template.
- *
- * @package WPEternalTheme
- */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

@@ -1,12 +1,5 @@
 <?php
-/**
- * Archive/listing fallback template.
- *
- * Elementor Theme Builder overrides this via the 'archive' location.
- *
- * @package WPEternalTheme
- */
-
+// Elementor Theme Builder overrides this via the 'archive' location.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

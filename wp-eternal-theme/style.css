@@ -4,7 +4,7 @@ Theme URI: https://github.com/One-World-By-Night/wp-eternal-theme
 Description: A standalone WordPress theme built for Elementor with WP Dark Mode support. Designed for the One World by Night community.
 Author: One World By Night
 Author URI: https://owbn.net
-Version: 2.2.1
+Version: 2.3.0
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -12,7 +12,7 @@ License: GPL-2.0-or-later
 Text Domain: wp-eternal-theme
 */
 
-/**********OWBN Brand Colors - From newsletter-colors.png**********/
+/* OWBN Brand Colors */
 :root {
 	/* Primary Brand Colors (Newsletter) */
 	--owbn-logo-red: #D2242C;        /* Logo and newsletter title */
@@ -79,7 +79,7 @@ html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) {
 	--owbn-background: var(--owbn-dark-background);
 }
 
-/**********Common style start*********/
+/* Common styles */
 
 body {
     font-family: "Roboto", sans-serif;
@@ -128,7 +128,6 @@ html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .element
 .main--header ul.elementor-nav-menu--dropdown a, ul.elementor-nav-menu--dropdown a:focus, ul.elementor-nav-menu--dropdown a:hover {
     border-inline-start: 0px solid transparent !important;
 }
-/**********Common style end**********/
 
 .banner--heading span.elementor-heading-title {
     font-size: clamp(30px, 5vw, 70px) !important;
@@ -356,7 +355,6 @@ html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .element
     position: absolute;
 	transform: rotateY(180deg) !important;
 }
-/* header style start*/
 html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .not__includeArea .elementor-heading-title,
 html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .not__includeArea .elementor-heading-title {
     color: #fff !important;
@@ -414,10 +412,9 @@ html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .not__in
     background: linear-gradient(97.13deg, var(--e-global-color-e21451c) 15.81%, rgba(71, 131, 236, .32) 82.31%), linear-gradient(88.44deg, #ff7971 .97%, var(--e-global-color-e21451c) 98.68%), linear-gradient(0deg, var(--e-global-color-42f8237), var(--e-global-color-42f8237)) !important;
         padding: 20px;
 }
-/* header style end*/
 
 
-/* event single page start */
+/* Event single page */
 .cro--sing--add > .elementor-widget-wrap {
     border: 1px solid var(--e-global-color-42f8237);
     height: fit-content;
@@ -514,10 +511,9 @@ html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .not__in
 	height: 350px;
 	object-fit: cover;
 }
-/* event single page end */
 
 
-/* event archive page start */
+/* Event archive page */
 .tab--events .elementor-tab-title {
     background: var(--e-global-color-e21451c) !important;
     border: solid 1px var(--e-global-color-e21451c) !important;
@@ -694,7 +690,6 @@ html:not(.wp-dark-mode-active):not([data-wp-dark-mode-active]) {
   overflow: hidden;
 }
 
-/* @@@@@@@@@ */
 
 .main--header{
     background: var(--wp-eternal-header-bg) !important;
@@ -722,11 +717,10 @@ html[data-wp-dark-mode-active] .heade--navbar--sec .sub-arrow svg {
 .heade--navbar--sec .sub-arrow{
 	    background-color: transparent !important;
 }
-/* @@@@@@@@@ */
 
 
 
-/* arcive page start */
+/* Archive page */
 
 .arcive--post--section article.elementor-post .elementor-post__text {
 	background: var(--wp-eternal-card-bg);
@@ -810,7 +804,6 @@ body.category .blog--sec--text {
 	display: none;
 }
 
-/* arcive page end */
 
 
 /* plugin css */
@@ -919,7 +912,7 @@ header.elementor-location-header + [data-elementor-type="wp-page"] {
     }
 }
 
-/******************Light dark mode css start*****************************/
+/* Dark mode */
 
 html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]), html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body, html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]), html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body{
 	color: var(--e-global-color-bcd8248) !important;
@@ -1032,12 +1025,9 @@ html.wp-dark-mode-active:not([data-wp-dark-mode-preset="0"]) body .main--header 
 html[data-wp-dark-mode-active]:not([data-wp-dark-mode-preset="0"]) body .main--header .sub-arrow svg {
     fill: #fff !important;
 }
-/******************Light dark mode css end*****************************/
 
 
-/*=====================================================================
-ACCESSIBILITY & WORDPRESS REQUIRED CLASSES
-============================================================================*/
+/* Accessibility & WP required classes */
 
 /* Screen reader text (WCAG 2.4.1 / WP Theme Check) */
 .screen-reader-text {
@@ -1155,9 +1145,7 @@ textarea:focus-visible,
 	margin: 0 0.25em;
 }
 
-/*=====================================================================
-MEDIA QUERY / RESPONSIVE DESIGN START
-============================================================================*/
+/* Responsive */
 
  @media only screen and (min-width:1025px) and (max-width:1280px)  {
 	 .heade--navbar--sec nav a {

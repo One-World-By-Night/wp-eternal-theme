@@ -1,10 +1,4 @@
 <?php
-/**
- * Enqueue theme styles and scripts.
- *
- * @package WPEternalTheme
- */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -12,7 +6,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 add_action( 'wp_enqueue_scripts', 'wp_eternal_enqueue_assets' );
 
 function wp_eternal_enqueue_assets() {
-	// Theme stylesheet.
 	wp_enqueue_style(
 		'wp-eternal-style',
 		get_stylesheet_uri(),
@@ -20,7 +13,6 @@ function wp_eternal_enqueue_assets() {
 		WP_ETERNAL_VERSION
 	);
 
-	// Frontend JavaScript.
 	wp_enqueue_script(
 		'wp-eternal-theme-js',
 		WP_ETERNAL_URI . '/assets/js/theme.js',

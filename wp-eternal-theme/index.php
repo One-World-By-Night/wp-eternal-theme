@@ -1,14 +1,4 @@
 <?php
-/**
- * The main template file.
- *
- * WordPress requires this file to exist. When Elementor Theme Builder
- * is active, it overrides this via registered theme locations.
- * This serves as the fallback when no Elementor template is assigned.
- *
- * @package WPEternalTheme
- */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
