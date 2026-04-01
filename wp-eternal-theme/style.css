@@ -695,12 +695,18 @@ html:not(.wp-dark-mode-active):not([data-wp-dark-mode-active]) {
     background: var(--wp-eternal-header-bg) !important;
     backdrop-filter: blur(1px) !important;
 }
-/* Header is always dark — keep nav links and sub-arrows white in all modes. */
+/* Header is always dark — nav links light, active/hover bright white. */
 .main--header .elementor-item,
+.main--header .sub-arrow svg {
+    color: rgba(255, 255, 255, 0.75) !important;
+    fill: rgba(255, 255, 255, 0.75) !important;
+    transition: color 0.2s, fill 0.2s;
+}
 .main--header .elementor-item:hover,
 .main--header .elementor-item:focus,
 .main--header .elementor-item.elementor-item-active,
-.main--header .sub-arrow svg {
+.main--header .elementor-item.highlighted,
+.main--header .has-submenu.highlighted > .elementor-item {
     color: #fff !important;
     fill: #fff !important;
 }
