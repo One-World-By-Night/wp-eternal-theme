@@ -4,7 +4,7 @@ Theme URI: https://github.com/One-World-By-Night/wp-eternal-theme
 Description: A standalone WordPress theme built for Elementor with WP Dark Mode support. Designed for the One World by Night community.
 Author: One World By Night
 Author URI: https://owbn.net
-Version: 2.3.1
+Version: 2.3.3
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -695,13 +695,19 @@ html:not(.wp-dark-mode-active):not([data-wp-dark-mode-active]) {
     background: var(--wp-eternal-header-bg) !important;
     backdrop-filter: blur(1px) !important;
 }
-/* Header is always dark — nav links light, active/hover bright white. */
+/* Header is always dark — nav links light, active/hover bright white.
+   Must exceed Elementor's .elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item specificity. */
+.main--header .elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item,
+.main--header .elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item:visited,
 .main--header .elementor-item,
 .main--header .sub-arrow svg {
     color: rgba(255, 255, 255, 0.75) !important;
     fill: rgba(255, 255, 255, 0.75) !important;
     transition: color 0.2s, fill 0.2s;
 }
+.main--header .elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item:hover,
+.main--header .elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item:focus,
+.main--header .elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item.elementor-item-active,
 .main--header .elementor-item:hover,
 .main--header .elementor-item:focus,
 .main--header .elementor-item.elementor-item-active,
