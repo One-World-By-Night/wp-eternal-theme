@@ -903,33 +903,33 @@ color: var(--wp-eternal-table-row-text) !important;
    Base = 150px so total offset (30px spacer + 150px margin = 180px) clears
    the ~150px-tall header with breathing room. */
 #content {
-    margin-top: 150px;
+    margin-top: var(--owbn-header-height, 150px);
 }
 
 /* Adjust for admin bar */
 .admin-bar #content {
-    margin-top: 182px; /* 150px + 32px */
+    margin-top: calc(var(--owbn-header-height, 150px) + 32px); /* 150px + 32px */
 }
 
 @media screen and (max-width: 782px) {
     .admin-bar #content {
-        margin-top: 196px; /* 150px + 46px */
+        margin-top: calc(var(--owbn-header-height, 150px) + 46px); /* 150px + 46px */
     }
 }
 
 /* Elementor full-width template pages have no <main id="content"> wrapper.
    Content sits in a sibling div right after the header, so apply the same offset. */
 header.elementor-location-header + [data-elementor-type="wp-page"] {
-    margin-top: 150px;
+    margin-top: var(--owbn-header-height, 150px);
 }
 
 .admin-bar header.elementor-location-header + [data-elementor-type="wp-page"] {
-    margin-top: 182px; /* 150px + 32px */
+    margin-top: calc(var(--owbn-header-height, 150px) + 32px); /* 150px + 32px */
 }
 
 @media screen and (max-width: 782px) {
     .admin-bar header.elementor-location-header + [data-elementor-type="wp-page"] {
-        margin-top: 196px; /* 150px + 46px */
+        margin-top: calc(var(--owbn-header-height, 150px) + 46px); /* 150px + 46px */
     }
 }
 
