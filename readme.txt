@@ -2,8 +2,8 @@
 
 The WordPress theme used across all One World by Night websites.
 
-**Version:** 2.3.3
-**Deployed to:** all OWBN sites
+Version: 2.3.3
+Deployed to: all OWBN sites
 
 ## What It Does
 
@@ -11,11 +11,11 @@ A standalone Elementor-based theme with built-in dark mode support. Provides the
 
 Key features:
 
-- **Elementor-first** — all page layout handled through Elementor and Elementor Pro
-- **WP Dark Mode** — full CSS custom property integration, light and dark modes
-- **Auto-provisioned templates** — header and footer created automatically in Elementor Theme Builder on activation
-- **TGM Plugin Activation** — prompts for required plugins (Elementor, Elementor Pro, WP Dark Mode)
-- **TranslatePress compatible** — works with the multilingual setup across all sites
+- Elementor-first -- all page layout handled through Elementor and Elementor Pro
+- WP Dark Mode -- full CSS custom property integration, light and dark modes
+- Auto-provisioned templates -- header and footer created automatically in Elementor Theme Builder on activation
+- TGM Plugin Activation -- prompts for required plugins (Elementor, Elementor Pro, WP Dark Mode)
+- TranslatePress compatible -- works with the multilingual setup across all sites
 
 ## Requirements
 
