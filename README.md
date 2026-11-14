@@ -2,7 +2,7 @@
 
 The WordPress theme used across all One World by Night websites.
 
-**Version:** 2.3.3
+**Version:** 2.3.4
 **Deployed to:** all OWBN sites
 
 ## What It Does

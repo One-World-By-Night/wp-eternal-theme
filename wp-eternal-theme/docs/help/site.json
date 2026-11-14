@@ -1,0 +1,19 @@
+{
+	"id": "wpet",
+	"site": "https://support.owbn.net",
+	"category": { "slug": "wpet", "name": "WP Eternal Theme" },
+	"slugPrefix": "wpet-",
+	"guides": {
+		"overview": "what-is-wp-eternal-theme"
+	},
+	"redirects": {
+		"header-and-footer": "wpet-header-and-footer",
+		"building-pages-with-elementor": "wpet-building-pages",
+		"customizing-your-site": "wpet-brand-colors"
+	},
+	"screens": {
+		"page:tgmpa-install-plugins": "required-plugins",
+		"edit:elementor_library": "header-and-footer",
+		"edit:docs": "author-tools"
+	}
+}

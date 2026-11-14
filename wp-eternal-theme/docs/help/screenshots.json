@@ -1,0 +1,24 @@
+{
+	"site": "http://localhost:8923",
+	"viewport": {
+		"width": 1280,
+		"height": 900
+	},
+	"accounts": {
+		"archie": "Dana Whitfield, site admin"
+	},
+	"notes": "Captured from the help sandbox (~/owbn/_localwp-oat/help), which runs the theme without Elementor, BetterDocs or TablePress; only the plugin installer has a shot. English-only screens; the Portuguese pages reuse the image with Portuguese alt text.",
+	"pages": {
+		"required-plugins": [
+			{
+				"heading": "The screen",
+				"path": "/wp-admin/themes.php?page=tgmpa-install-plugins",
+				"account": "archie",
+				"alt": {
+					"en": "Install Required Plugins: Elementor and WP Dark Mode marked required, BetterDocs, Open Accessibility and TablePress recommended, each with Install.",
+					"pt_BR": "Install Required Plugins: Elementor e WP Dark Mode marcados como obrigatórios, BetterDocs, Open Accessibility e TablePress recomendados, cada um com Install."
+				}
+			}
+		]
+	}
+}

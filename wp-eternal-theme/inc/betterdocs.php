@@ -47,13 +47,7 @@ function wp_eternal_doc_category_save_fields( $term_id ) {
 		return;
 	}
 
-	if ( isset( $_POST['user_id_text'] ) ) {
-		update_term_meta(
-			$term_id,
-			'user_id_text',
-			absint( $_POST['user_id_text'] )
-		);
-	}
+	update_term_meta( $term_id, 'user_id_text', get_current_user_id() );
 }
 
 function wp_eternal_doc_tag_add_fields( $taxonomy ) {
@@ -74,13 +68,7 @@ function wp_eternal_doc_tag_save_fields( $term_id ) {
 		return;
 	}
 
-	if ( isset( $_POST['user_id_text_tag'] ) ) {
-		update_term_meta(
-			$term_id,
-			'user_id_text_tag',
-			absint( $_POST['user_id_text_tag'] )
-		);
-	}
+	update_term_meta( $term_id, 'user_id_text_tag', get_current_user_id() );
 }
 
 function wp_eternal_filter_doc_terms( $query ) {
@@ -164,12 +152,9 @@ function wp_eternal_docs_meta_save( $post_id ) {
 		return;
 	}
 
-	if ( isset( $_POST['post_created_by_user_id'] ) ) {
-		update_post_meta(
-			$post_id,
-			'post_created_by_user_id',
-			absint( $_POST['post_created_by_user_id'] )
-		);
+	// A doc belongs to whoever first saved it.
+	if ( '' === (string) get_post_meta( $post_id, 'post_created_by_user_id', true ) ) {
+		update_post_meta( $post_id, 'post_created_by_user_id', get_current_user_id() );
 	}
 }
 
